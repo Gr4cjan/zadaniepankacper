@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktywny Formularz Rejestracji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rejestracja</h1>
+        <form id="registrationForm">
+            <label for="imie">Imię</label>
+            <input type="text" id="imie">
+
+            <label for="nazwisko">Nazwisko</label>
+            <input type="text" id="nazwisko">
+
+            <label for="dataUrodzenia">Data urodzenia</label>
+            <input type="date" id="dataUrodzenia">
+
+            <label for="email">Adres e-mail</label>
+            <input type="email" id="email">
+
+            <label for="telefon">Numer telefonu</label>
+            <input type="tel" id="telefon">
+
+            <label for="haslo">Hasło</label>
+            <input type="password" id="haslo">
+
+            <label for="potwierdzHaslo">Potwierdzenie hasła</label>
+            <input type="password" id="potwierdzHaslo">
+
+            <button type="submit">Zarejestruj się</button>
+        </form>
+
+        <div id="summary" class="summary"></div>
+    </div>
+
+    <script>
+        let poleImie = document.getElementById('imie');
+        poleImie.addEventListener('input', function () {
+            let imie = poleImie.value;
+
+            if (imie.length == 0) {
+                event.preventDefault();
+                poleImie.style.borderColor = 'red';
+            } else {
+                event.preventDefault();
+                poleImie.style.borderColor = 'green';
+            }
+        });
+
+        let poleNazwisko = document.getElementById('nazwisko');
+        poleNazwisko.addEventListener('input', function () {
+            let nazwisko = poleNazwisko.value;
+
+            if (nazwisko.length == 0) {
+                event.preventDefault();
+                poleNazwisko.style.borderColor = 'red';
+            } else {
+                event.preventDefault();
+                poleNazwisko.style.borderColor = 'green';
+            }
+        });
+
+        let poleData = document.getElementById('data');
+        poleData.addEventListener('input', function () {
+            let data = poleData.value;
+
+            if (data.length == 0) {
+                event.preventDefault();
+                poleData.style.borderColor = 'red';
+            } else {
+                event.preventDefault();
+                poleData.style.borderColor = 'green';
+            }
+        });
+
+        let poleEmail = document.getElementById('email');
+        poleEmail.addEventListener('input', function () {
+            let email = poleEmail.value;
+
+            if (email.includes('@') && email.includes('.')) {
+                event.preventDefault();
+                poleEmail.style.borderColor = 'green';
+            } else {
+                event.preventDefault();
+                poleEmail.style.borderColor = 'red';
+            }
+        });
+
+        let poleTelefon = document.getElementById('phone');
+        poleTelefon.addEventListener('input', function () {
+            let telefon = document.getElementById('phone').value;
+
+            if (telefon.length == 9 && !isNaN(telefon)) {
+                event.preventDefault();
+                poleTelefon.style.borderColor = 'green';
+            } else {
+                event.preventDefault();
+                poleTelefon.style.borderColor = 'red';
+            }
+        });
+
+        let poleHaslo = document.getElementById('haslo');
+        poleHaslo.addEventListener('input', function () {
+            let haslo = poleHaslo.value;
+
+            if (haslo.length >= 8 && /\d/.test(haslo)) {
+                event.preventDefault();
+                poleHaslo.style.borderColor = 'green';
+            } else {
+                event.preventDefault();
+                poleHaslo.style.borderColor = 'red';
+            }
+        });
+
+        let polepHaslo = document.getElementById('powtorzhaslo');
+        polepHaslo.addEventListener('input', function () {
+            let haslo = document.getElementById('haslo').value;
+            let powtorzhaslo = document.getElementById('powtorzhaslo').value;
+
+            if (haslo == powtorzhaslo) {
+                event.preventDefault();
+                polepHaslo.style.borderColor = 'green';
+            } else {
+                event.preventDefault();
+                polepHaslo.style.borderColor = 'red';
+            }
+        });
+
+        document.getElementById('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+
+        
+        });
+
+    </script>
+</body>
+</html>
