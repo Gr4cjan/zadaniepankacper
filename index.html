@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Interaktywny Formularz Rejestracji</title>
+    <title>title</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -89,9 +89,9 @@
             }
         });
 
-        let poleTelefon = document.getElementById('phone');
+        let poleTelefon = document.getElementById('telefon');
         poleTelefon.addEventListener('input', function () {
-            let telefon = document.getElementById('phone').value;
+            let telefon = document.getElementById('telefon').value;
 
             if (telefon.length == 9 && !isNaN(telefon)) {
                 event.preventDefault();
@@ -115,10 +115,10 @@
             }
         });
 
-        let polepHaslo = document.getElementById('powtorzhaslo');
+        let polepHaslo = document.getElementById('potwierdzHaslo');
         polepHaslo.addEventListener('input', function () {
             let haslo = document.getElementById('haslo').value;
-            let powtorzhaslo = document.getElementById('powtorzhaslo').value;
+            let powtorzhaslo = document.getElementById('potwierdzHaslo').value;
 
             if (haslo == powtorzhaslo) {
                 event.preventDefault();
